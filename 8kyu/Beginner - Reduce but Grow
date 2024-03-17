@@ -1,0 +1,8 @@
+function grow(x){ 
+   const sortedArr = x.sort(); //sort the array
+   var product = 1; //set the product variable to 1 (if not set to one then will keep multiplying by 0)
+  for (let i = 0; i < x.length; i++) {
+    product *= sortedArr[i]; //multiple the next value by the product variable
+  }//for loop to run through the array
+  return product;//return the product
+}
