@@ -1,0 +1,17 @@
+function past(h, m, s){
+  //#Happy Coding! ^_^
+ 
+  //This was the first attempt
+  //var millisec;
+  // millisec = (h*60*60*1000) + (m*60*1000) + (s*1000);
+  //return millisec;
+  
+  
+  //This was the second attempt, I cleaned it up
+  var ms;
+  m = m + (h*60);// convert hours to minutes and add to current minutes
+  s = s + (m*60);//convert minutes to seconds and add current seconds
+  ms = s*1000;//convert seconds to milliseconds
+  
+  return ms;//return the answer
+}
