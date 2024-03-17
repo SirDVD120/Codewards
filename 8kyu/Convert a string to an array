@@ -1,0 +1,4 @@
+function stringToArray(string){
+	const arr = string.split(" "); //split the string and assign into the array
+  return arr; //return the array
+}
