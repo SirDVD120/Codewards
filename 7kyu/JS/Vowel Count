@@ -1,0 +1,10 @@
+function getCount(str) {
+  var matches = str.match(/[aeiou]/g);
+  console.log(str);
+  console.log(matches);
+  if (matches == null){
+    return 0;
+  }else{
+    return matches.length;
+  }
+}
