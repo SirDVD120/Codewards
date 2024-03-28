@@ -1,0 +1,4 @@
+function isIsogram(str){
+  const rx = /(\w).*\1/i;
+  return !rx.test(str);
+}
