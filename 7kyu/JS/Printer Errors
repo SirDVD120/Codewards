@@ -1,0 +1,7 @@
+function printerError(s) {
+   var error = s.match(/[n-z]/g);
+  console.log(s);
+  console.log(error);
+  console.log((error === null) ? "0" : error.length);
+  return ((error === null)? "0":error.length) + "/" + s.length;
+}
