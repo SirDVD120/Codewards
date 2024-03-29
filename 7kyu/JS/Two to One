@@ -1,0 +1,4 @@
+function longest(s1, s2) {
+  const long = Array.from(new Set((s1+s2).split(""))).sort();
+  return long.join('');
+}
