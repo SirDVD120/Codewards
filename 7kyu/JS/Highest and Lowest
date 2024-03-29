@@ -1,0 +1,3 @@
+function highAndLow(numbers){
+  return Math.max.apply(0,numbers.split(" ")).toString().concat(" ",Math.min.apply(0,numbers.split(" ")).toString());  
+}
