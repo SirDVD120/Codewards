@@ -1,0 +1,3 @@
+function removeChar(str){
+  return str.replace(/^[\s\S]|[\s\S]$/g,'');
+};
