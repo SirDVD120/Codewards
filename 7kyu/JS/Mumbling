@@ -1,0 +1,3 @@
+function accum(s) {
+	return s.toUpperCase().split('').map((a,b) => a.padEnd(b+1,a.toLowerCase())).join('-');
+}
