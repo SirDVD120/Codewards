@@ -1,0 +1,8 @@
+function getSum(a, b){
+  const sumArr = [a,b].sort(function(a, b){return a - b});
+  let newSum = 0;
+  for (let nextInt = sumArr[0]; nextInt <= sumArr[1]; nextInt++){
+    newSum = newSum + nextInt;
+  }
+  return newSum;
+}
