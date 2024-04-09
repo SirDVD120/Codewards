@@ -1,0 +1,7 @@
+function tribonacci(signature,n){
+  const tribArr = signature;
+  for (let i = 0; i<n-3; i++){
+    tribArr.push(tribArr[i] + tribArr[i+1] + tribArr[i+2]);
+  }
+  return tribArr.slice(0,n);
+}
