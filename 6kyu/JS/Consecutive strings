@@ -1,0 +1,24 @@
+function longestConsec(strarr, k) {
+  let longestNum = 0;
+  let longestString = "";
+  let tempString ="";
+  if(strarr.length==0||k>strarr.length||k<=0){
+    //if the array is empty, the number of string is more than the array, or the number of strings in negative, return a blank string
+    longestString ="";
+  }else{
+  for(let i = 0; i < strarr.length-(k-1); i++){
+    //iterate through each of the array execpt the last k-1 items
+    for(let j = 0; j < k; j++){
+      //join k number of strings to the strarr[i] string
+      tempString = tempString.concat(strarr[i+j]);
+    }
+    if (tempString.length > longestNum){
+      //test if the current string is longer than the last longest string
+      longestString = tempString;
+      longestNum = tempString.length;
+    }
+    //reset the tempString variable
+    tempString = "";
+  }
+  }
+  return longestString;
