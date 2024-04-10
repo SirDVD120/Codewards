@@ -1,0 +1,9 @@
+function findOdd(A) {
+  let oddNumber = 0;
+  for (let i = 0; i<A.length; i++){
+    if(A.filter((x)=>A[i]==x).length%2 != 0){
+      oddNumber = A[i];
+    }
+  }
+  return oddNumber;
+}
