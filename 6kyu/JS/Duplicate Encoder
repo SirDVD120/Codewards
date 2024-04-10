@@ -1,0 +1,12 @@
+function duplicateEncode(word){
+    let newWord = "";
+    const wordArr = word.split('');
+    for (let i = 0; i < wordArr.length; i++){
+      if(wordArr.filter((x) => wordArr[i].toLowerCase() == x.toLowerCase()).length > 1){
+        newWord = newWord.concat(")");
+      }else{
+        newWord = newWord.concat("(");
+      }
+    }
+    return newWord;
+}
