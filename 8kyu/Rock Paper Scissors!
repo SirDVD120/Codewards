@@ -1,0 +1,4 @@
+const rps = (p1, p2) => {
+  let beat = {'rock': 'scissors', 'scissors': 'paper', 'paper': 'rock'}
+  return (p1 == p2)? 'Draw!': (beat[p1] == p2)?  "Player 1 won!": "Player 2 won!";
+};
