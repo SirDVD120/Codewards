@@ -1,0 +1,23 @@
+function dirReduc(arr){
+  // Define the opposite values for each direction
+  const opposites = [
+    {direction: "NORTH", oppDirection: "SOUTH"},
+    {direction: "SOUTH", oppDirection: "NORTH"},
+    {direction: "EAST", oppDirection: "WEST"},
+    {direction: "WEST", oppDirection: "EAST"}];
+  let oppositeDirection = "";
+  // loop through the array of directions one at a time
+  for (let i = 0; i<arr.length-1; i++){
+    //loop through the opposite values to find the opposite value to arr[i]
+    for (let j = 0; j<opposites.length; j++){
+      if(opposites[j].direction == arr[i])
+        oppositeDirection = opposites[j].oppDirection;
+    }
+    //check the next value vs the opposite direction, if true, splice arr[i] and arr[i+1], return i to -1 to start the loop again from the start
+    if(arr[i+1] == oppositeDirection){
+      arr.splice(i,2);
+      i = -1;
+    }
+  }
+  return arr;
+}
