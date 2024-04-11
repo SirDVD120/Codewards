@@ -1,0 +1,15 @@
+var uniqueInOrder=function(iterable){
+  let workingArray = [];  
+  if (!Array.isArray(iterable)){
+    workingArray = iterable.split('');
+  }else{
+    workingArray = iterable;
+  }
+  for (let i = 0; i<workingArray.length; i++){
+    if(workingArray[i] == workingArray[i+1]){
+      workingArray.splice(i+1,1);
+      i--;
+    }
+  }
+  return workingArray;
+}
