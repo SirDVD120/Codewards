@@ -1,0 +1,7 @@
+function order(words){
+  var wordsArr = words.split(' ');
+  wordsArr = wordsArr.map((a) => [a,parseInt(a.match(/\d/))]);
+  wordsArr = wordsArr.sort((a, b) => a[1] - b[1]);
+  wordsArr = wordsArr.map(([a,b]) => a).join(' ');
+  return wordsArr;
+}
