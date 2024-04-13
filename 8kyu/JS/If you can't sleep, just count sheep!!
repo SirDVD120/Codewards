@@ -1,0 +1,7 @@
+var countSheep = function (num){
+  var text = "";
+  for (let i = 1; i<=num; i++){
+    text = text.concat(i + " sheep...");
+  }
+  return text;
+}
