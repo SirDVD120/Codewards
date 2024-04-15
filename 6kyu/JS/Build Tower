@@ -1,0 +1,12 @@
+function towerBuilder(nFloors) {
+  var tower = [];
+  for (let i = 1; i<=nFloors; i++){
+    let count = (2*i-1);
+    var string = "*";
+    string = string.repeat(count);
+    string = string.padStart((nFloors+i)-1," ");
+    string = string.padEnd((2*nFloors)-1," ");
+    tower.push(string);
+  }
+  return tower;
+}
