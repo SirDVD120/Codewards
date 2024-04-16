@@ -1,0 +1,9 @@
+function productFib(prod){
+  var f = [0,1];
+  var finalArr = [];
+  while ((f[f.length-2]*f[f.length-1]) < prod){
+    f.push(f[f.length-2]+f[f.length-1]);
+  }
+  finalArr = [f[f.length-2],f[f.length-1],(f[f.length-2]*f[f.length-1]== prod)];
+  return finalArr;
+}
