@@ -1,0 +1,5 @@
+function domainName(url){
+  console.log(url);
+  var urlArray = url.match(/(?<=^|[./])([^./]+?)(?=\.)/g);
+  return (urlArray[0] == "www")? urlArray[1]:urlArray[0];
+}
