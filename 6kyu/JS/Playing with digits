@@ -1,0 +1,20 @@
+function digPow(n, p){
+  var array = n.toString().split('');
+  for (let i = 0; i<array.length; i++){
+    array[i] = Number(Math.pow(array[i],p+i));
+  }
+  var sum = array.reduce((acc,val) => acc + val);
+  var count = 1;
+  var doLoop = true;
+  while (doLoop){
+    if(n*count<sum){
+      count++;
+      doLoop = true;
+    }else if(n*count == sum){
+      doLoop = false;
+    }else{
+      count = -1;
+      doLoop = false;
+    }
+  }
+  return count;
