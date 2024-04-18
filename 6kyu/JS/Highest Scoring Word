@@ -1,0 +1,13 @@
+function high(x){
+  var array = x.split(" ");
+  var high = "";
+  var highScore = 0;
+  for (let i = 0; i< array.length; i++){
+    var currentScore = array[i].split('').reduce((x,y) => x+(y.charCodeAt(0)-96),0);
+    if (currentScore > highScore){
+      highScore = currentScore;
+      high = array[i];
+    }
+  }
+  return high;
+}
