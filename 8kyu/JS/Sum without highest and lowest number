@@ -1,0 +1,7 @@
+function sumArray(array) {
+  if (!array || array.length < 3){
+    return 0;
+  }else{
+    return array.reduce((acc, itt) => acc + itt)-Math.min(...array)-Math.max(...array);
+  }
+}
