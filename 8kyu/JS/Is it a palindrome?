@@ -1,0 +1,13 @@
+function isPalindrome(x) {
+  var array = x.toString().split('');
+  var result = true;
+  var i = 0;
+  while (result && i<array.length/2){
+    if (array[i].toUpperCase() == array[array.length-(i+1)].toUpperCase()){
+      i++;
+    }else{
+      result = false;
+    }
+  }
+  return result;
+}
