@@ -1,0 +1,15 @@
+function isPangram(string){
+  string = string.toUpperCase();
+  var result = true;
+  var i = 0;
+  while(result && i<26){
+    var currentChar = String.fromCharCode(65+i);
+    if (string.includes(currentChar)) {
+      result = true;
+    }else{
+      result = false;
+    }
+    i++;
+  }
+  return result;
+}
