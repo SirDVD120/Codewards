@@ -1,0 +1,18 @@
+function getDivisorsCnt(n){
+  var count = 0;
+  var sqRoot = Math.floor(Math.sqrt(n));
+  var array = [];
+  var i = 1;
+  while (i<=sqRoot){
+    if((n/i)%1 == 0){
+      if(!array.includes(i)){
+        array.push(i);
+      }
+      if (!array.includes(n/i)){
+        array.push(n/i);
+      }
+    }
+    i++;
+  }
+  return array.length;
+}
