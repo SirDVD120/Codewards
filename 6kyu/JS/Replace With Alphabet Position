@@ -1,0 +1,5 @@
+function alphabetPosition(text) {
+  var textArray = text.toUpperCase().replace(/[^A-Z]/g,'').split('');
+  textArray = textArray.map((x) => x.charCodeAt(0) - 64);
+  return textArray.join(' ');
+}
