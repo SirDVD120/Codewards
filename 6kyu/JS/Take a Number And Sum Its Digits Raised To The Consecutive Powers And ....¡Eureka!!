@@ -1,0 +1,11 @@
+function sumDigPow(a, b) {
+  var finalArr = [];
+  while (a<=b){
+    var testArr = a.toString().split('');
+    if (testArr.reduce((acc, line, index) => acc + parseInt(Math.pow(line,index+1)),0) == a){
+      finalArr.push(a);
+    }
+    a++;
+  }
+  return finalArr;
+}
