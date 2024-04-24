@@ -1,0 +1,40 @@
+function encrypt(text, n) {
+  if(!text || n<=0){
+   return text;
+  }else{
+    var finalText = "";
+    var tempArray = text.split('');
+    for (let i = 1; i<=n; i++){
+      var even = [];
+      var odd = [];
+      for (let y = 0; y<tempArray.length; y++){
+        if (y%2 == 0){
+          even.push(tempArray[y]);
+        }else{
+          odd.push(tempArray[y]);
+        }
+      }
+      tempArray = odd.concat(even);
+    }
+    finalText = tempArray.join('');
+  return finalText;
+  }
+}
+
+function decrypt(encryptedText, n) {
+  if (!encryptedText || n<=0){
+    return encryptedText;
+  }else{
+    var finalString = encryptedText;
+    for (let i = 1; i<=n; i++){
+      var odd = finalString.substring(Math.floor(finalString.length/2));
+      var even = finalString.substring(0,Math.floor(finalString.length/2));
+      var tempString = "";
+      for (let y = 0; y<finalString.length/2; y++){
+        tempString = tempString.concat(odd[y]? odd[y]:"",even[y]? even[y]:"");
+      }
+      finalString = tempString;
+    }
+    return finalString;
+  }
+}
