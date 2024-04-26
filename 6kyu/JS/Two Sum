@@ -1,0 +1,12 @@
+function twoSum(numbers, target) {
+  var index1 = 0;
+  var index2 = 1;
+  
+  for(let i = 0; i< numbers.length; i++){
+    if (numbers.indexOf(target-numbers[i],i+1)!= -1){
+      index1 = i;
+      index2 = numbers.indexOf(target-numbers[i],i+1);
+    } 
+  }
+  return [index1,index2];
+}
