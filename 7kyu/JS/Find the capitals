@@ -1,0 +1,5 @@
+var capitals = function (word) {
+	var array = word.split('');
+  array = array.map((value,index) => /[A-Z]/.test(value)? index:null).filter((x) => x != null);
+  return array;
+};
