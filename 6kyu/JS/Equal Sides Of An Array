@@ -1,0 +1,15 @@
+function findEvenIndex(arr){
+  var index = -1;
+  console.log("Array:",arr);
+  for (let i = 0; i<arr.length; i++){
+    var left = arr.slice(0,i).reduce((a,b) => a+b,0);
+    var right = arr.slice(i+1).reduce((a,b) => a+b,0);
+    console.log("Left:",left);
+    console.log("Right:",right);
+    if (left === right){
+      index = i;
+      break;
+    }
+  }
+  return index;
+}
