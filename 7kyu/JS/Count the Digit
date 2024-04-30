@@ -1,0 +1,9 @@
+function nbDig(n, d) {
+  var count = 0;
+  const regexp = new RegExp(d, "g");
+  for (let i = 0; i<=n; i++){
+    var k = Math.pow(i,2).toString();
+    count += [...k.matchAll(regexp)].length; 
+  }
+  return count;
+}
