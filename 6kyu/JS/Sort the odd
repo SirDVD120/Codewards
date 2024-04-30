@@ -1,0 +1,13 @@
+function sortArray(array) {
+  var evenArray = array.map((value,index) => value%2!=0? 'x':value);
+  var oddArray = array.filter((value,index) => value%2!=0);
+  oddArray.sort(function(a, b){return b - a});
+  var finalArray = evenArray;
+  for (let i = 0; i<evenArray.length; i++){
+    if(finalArray[i] === 'x'){
+      finalArray[i] = oddArray[oddArray.length-1];
+      oddArray.pop();
+    }
+  }
+  return finalArray;
+}
