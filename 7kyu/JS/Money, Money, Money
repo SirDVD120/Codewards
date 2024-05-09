@@ -1,0 +1,11 @@
+function calculateYears(principal, interest, tax, desired) {
+  var years = 0;
+  var currentAmount = principal;
+  while (currentAmount < desired){
+    var interestAmount = currentAmount * interest;
+    var taxedAmount = interestAmount * tax;
+    currentAmount = currentAmount + interestAmount - taxedAmount;
+    years ++;
+  }
+  return years;
+}
