@@ -1,0 +1,9 @@
+function SeriesSum(n) {
+  var lastDom = -2;
+  var finalAnswer = 0;
+  for (let i = 1; i<=n; i++){
+    finalAnswer = finalAnswer + (1/(lastDom+3));
+    lastDom = lastDom +3;
+  }
+  return finalAnswer.toFixed(2);
+}
