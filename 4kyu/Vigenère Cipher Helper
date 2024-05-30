@@ -1,0 +1,78 @@
+function VigenèreCipher(key, abc) {
+  this.encode = function (str) {
+    //console.log("Encode");
+    var strArray = str.split('');
+    var newString = '';
+    
+    //If the key is too short, add a copy to the back, repeat till it is long enough
+    while (key.length < str.length){
+      key = key + key;
+    }
+    /*console.log("Key:",key);
+    console.log("Alphabet:", abc);
+    console.log("String:",str);
+    console.log("String Array:",strArray);*/
+    
+    //Run through each index of strArray
+    for (let i = 0; i< strArray.length; i++){
+      var keyIndex = 0;
+      var currentIndex = 0;
+      var newIndex = 0;
+      
+      //If either key[i] or strArray[i] are not in the alphabet, don't change strArray[i]
+      if(abc.indexOf(key[i]) != -1 && abc.indexOf(strArray[i]) != -1){
+        keyIndex = abc.indexOf(key[i]);
+        currentIndex = abc.indexOf(strArray[i]);
+        
+        //newIndex is set the current + key, if current+key is bigger than abc, then it will wrap around to the front again
+        newIndex = ((currentIndex + keyIndex) > abc.length-1)? (currentIndex + keyIndex)-(abc.length):(currentIndex + keyIndex);
+        strArray[i] = abc.at(newIndex);
+      }
+      /*console.log("Current Index:",currentIndex);
+      console.log("Key Index:", keyIndex);
+      console.log("New Index:", newIndex);
+      console.log("New Letter:", strArray[i]);*/
+    }
+    newString = strArray.join('');
+    //console.log("New String:", newString);
+    return (newString);
+  };
+  this.decode = function (str) {
+    //console.log("Decode");
+    var strArray = str.split('');
+    var newString = '';
+    
+    //If the key is too short, add a copy to the back, repeat till it is long enough
+    while (key.length < str.length){
+      key = key + key;
+    }
+    /*console.log("Key:",key);
+    console.log("Alphabet:", abc);
+    console.log("String:",str);
+    console.log("String Array:",strArray);*/
+    
+    //Run through each index of strArray
+    for (let i = 0; i< strArray.length; i++){
+      var keyIndex = 0;
+      var currentIndex = 0;
+      var newIndex = 0;
+      
+      //If either key[i] or strArray[i] are not in the alphabet, don't change strArray[i]
+      if(abc.indexOf(key[i]) != -1 && abc.indexOf(strArray[i]) != -1){
+        keyIndex = abc.indexOf(key[i]);
+        currentIndex = abc.indexOf(strArray[i]);
+        
+        //newIndex is set to current - key, if current - key is less than 0, it will go to the back of abc
+        newIndex = ((currentIndex - keyIndex) < 0)? (currentIndex - keyIndex)+(abc.length):(currentIndex - keyIndex);
+        strArray[i] = abc.at(newIndex);
+      }
+      /*console.log("Current Index:",currentIndex);
+      console.log("Key Index:", keyIndex);
+      console.log("New Index:", newIndex);
+      console.log("New Letter:", strArray[i]);*/
+    }
+    newString = strArray.join('');
+    //console.log("New String:", newString);
+    return (newString);
+  };
+}
