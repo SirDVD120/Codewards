@@ -1,0 +1,3 @@
+function removeSmallest(numbers) {
+  return numbers.filter((val,ind,arr) => ind != arr.indexOf(Math.min(...arr)));
+}
