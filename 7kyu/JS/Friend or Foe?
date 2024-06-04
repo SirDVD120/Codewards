@@ -1,0 +1,9 @@
+function friend(friends){
+  var newArr = [];
+  for(const friend of friends){
+    if(friend.length == 4){
+      newArr.push(friend)
+    }
+  }
+  return newArr;
+}
