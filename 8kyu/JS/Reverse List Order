@@ -1,0 +1,10 @@
+function reverseList(list) {
+  var newList = [];
+  while(list.length>0){
+    //console.log(list)
+    //console.log(newList);
+    newList.unshift(list.shift());
+  }
+  //console.log(newList);
+  return newList;
+}
